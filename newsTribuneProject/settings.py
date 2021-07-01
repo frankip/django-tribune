@@ -15,7 +15,6 @@ import dj_database_url
 from pathlib import Path
 from decouple import config
 
-ALLOWED_HOSTS= ['localhost', '.herokuapp.com', '127.0.0.1', 'mc41-tribune.herokuapp.com']
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -31,7 +30,8 @@ SECRET_KEY = 'django-insecure-y0=8hq#w6&2t3l%p!u#x@vubxlxh2eqwt0!ulc$aa%fou28)7m
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
+ALLOWED_HOSTS= ['localhost', '.herokuapp.com', '127.0.0.1', 'mc41-tribune.herokuapp.com']
 
 
 # Application definition
