@@ -15,7 +15,8 @@ import dj_database_url
 from pathlib import Path
 from decouple import config
 
-ALLOWED_HOSTS= ['localhost', '.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS= ['localhost', '.herokuapp.com', '127.0.0.1', 'mc41-tribune.herokuapp.com']
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
