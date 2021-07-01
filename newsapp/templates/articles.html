@@ -3,7 +3,7 @@
 {% block content %}
 {{block.super}}
 <div class="container">
-    <h1 class="text-center"> Welcome to the Moringa Tribune</h1>
+    <h1 class="text-center"> Welcome to the Moringa Tribune news</h1>
     
     {% for news_item in articles %}
     <div class="row">
@@ -16,7 +16,6 @@
                     <img src="{{ news_item.article_image.url }}" class="img-fluid rounded-start img-thumbnail" alt="...">
                     {% else %}
                     <img class="img-fluid rounded-start img-thumbnail" src="https://via.placeholder.com/150">
-          
                     {% endif %}
                  
                   </div>
