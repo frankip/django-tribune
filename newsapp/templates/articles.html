@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{block.super}}
+<div class="container">
+    <h1 class="text-center"> Welcome to the Moringa Tribune</h1>
+    
+    {% for news_item in articles %}
+    <div class="row">
+        <!-- displaying News articles -->
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    {% if news_item.article_image%}
+                    <img src="{{ news_item.article_image.url }}" class="img-fluid rounded-start img-thumbnail" alt="...">
+                    {% else %}
+                    <img class="img-fluid rounded-start img-thumbnail" src="https://via.placeholder.com/150">
+          
+                    {% endif %}
+                 
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ news_item.title }} </h5>
+                      <p class="card-text">{{ news_item.post }}</p>
+                      <p class="card-text"><small class="text-muted">Last updated {{ news_item.pub_date | timesince }}</small></p>
+                      <a href="{% url 'single-article' news_item.id %}">view article</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+      </div>
+    {% empty %}
+        <div class="row">
+            <h2 class="text-center">There No News Items</h2>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

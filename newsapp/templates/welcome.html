@@ -14,10 +14,22 @@
 
           <p>{{ news_item.pub_date }}</p>
           <a href="{% url 'single-article' news_item.id %}">view article</a>
+
+        </div>
+        <div class="col-lg-6">
+          {% if news_item.article_image%}
+          <img class="img-thumbnail img-responsive" src="{{ news_item.article_image.url }}">
+
+          {% else %}
+          
+          <img class="img-responsive" src="https://via.placeholder.com/150">
+          
+          {% endif %}
+       
         </div>
       </div>
 
-        {% empty %}so
+        {% empty %}
         <div class="row">
             <h2 class="text-center">There No News Items</h2>
         </div>

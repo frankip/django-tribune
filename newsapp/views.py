@@ -9,7 +9,7 @@ def welcome(request):
     ctx = {
         "articles": articles,
     }
-    return render(request, 'welcome.html', ctx)
+    return render(request, 'articles.html', ctx)
 
 def about(request):
 

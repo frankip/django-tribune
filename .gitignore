@@ -2,3 +2,4 @@ venv/
 db.sqlite3
 /__pycache__/
 *.pyc
+newsTribuneProject/__pycache__/urls.cpython-36.pyc
