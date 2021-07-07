@@ -1,0 +1,6 @@
+MODE="dev"
+DATABASE_NAME=''
+DATABASE_USER=''
+DATABASE_PASSWORD=''
+DEBUG="False"
+SECRET_KEY="yrfuqpf-j8547nakndj2"

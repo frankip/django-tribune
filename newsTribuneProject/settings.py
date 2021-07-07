@@ -98,9 +98,9 @@ if config('MODE')=="dev":
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'tibune_news',
-            'USER': 'francky',
-            'PASSWORD':'123bigman',
+            'NAME': config('DATABASE_NAME'),
+            'USER': config('DATABASE_USER'),
+            'PASSWORD':config('DATABASE_PASSWORD'),
         }
     }
 else:
