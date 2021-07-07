@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
+
 #models
 from .models import Article
 # Create your views here.
@@ -22,6 +24,7 @@ def about_name(request, name):
     print('name',name )
     return render(request, 'about1.html', ctx)
 
+@login_required(login_url='/accounts/login/')
 def single_article(request, article_id):
     try:
         single_article = Article.retrieve_single_article(article_id)
