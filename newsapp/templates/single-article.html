@@ -10,7 +10,11 @@
                 <h2 class="text-center">{{ single_article.title}}</h2>
             </div>
             <div class="row">
-                <h2 class="text-center">{{ single_article.post}}</h2>
+                <p class="text-center">
+                    {% autoescape on %}
+                    {{ single_article.post | safe}}
+                    {% endautoescape %}
+                </p>
             </div>
             <div class="row">
                 <h2 class="text-center">{{ single_article.pub_date| timesince }}</h2>

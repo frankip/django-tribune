@@ -25,15 +25,17 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('news/', include('newsapp.urls')),
+    path('', include('newsapp.urls')),
     path('accounts/register/',
         RegistrationView.as_view(success_url='/accounts/login/'),
         name='django_registration_register'),
-    path('accounts/login/',
-        RegistrationView.as_view(success_url='/accounts/login/'),
-        name='django_registration_register'),
+    # path('accounts/login/',
+    #     RegistrationView.as_view(success_url='/accounts/login/'),
+    #     name='django_registration_register'),
     path('accounts/', include('django_registration.backends.one_step.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('tinymce/', include('tinymce.urls'))
+    
     # path('accounts/login/',views.LoginView.as_view(), name="login"),
     # path('accounts/logout/',views.LogoutView.as_view(), name="logout")
     # path('accounts/', include('registration.backends.simple.urls'))

@@ -8,5 +8,7 @@ urlpatterns = [
     path('about/', views.about, name="about"),
     path('about/<str:name>', views.about_name, name="about-name"),
     path('article/<int:article_id>', views.single_article, name="single-article"),
+    path('article/new/', views.new_article, name="new-article"),
+
     # url('^about/(\name)/$', views.about_name, name="about"),
 ]

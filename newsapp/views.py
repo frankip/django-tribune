@@ -1,8 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 
 #models
 from .models import Article
+from .forms import NewArticleForm 
 # Create your views here.
 
 def welcome(request):
@@ -36,3 +37,16 @@ def single_article(request, article_id):
         "single_article": single_article
     }
     return render(request, 'single-article.html', ctx)
+
+def new_article(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form = NewArticleForm(request.POST, request.FILES)
+        if form.is_valid():
+            article = form.save(commit=False)
+            article.editor = current_user
+            article.save()
+        return redirect('welcome')
+    else:
+        form = NewArticleForm()
+    return render(request, 'new-article.html', {'form':form})
